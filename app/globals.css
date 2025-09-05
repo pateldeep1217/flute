@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to sophisticated professional theme with cyan and lavender palette */
+  --background: #ffffff; /* Pure white main background */
+  --foreground: #475569; /* Dark slate gray for primary text */
+  --card: #ecfeff; /* Light cyan for note cards */
+  --card-foreground: #164e63; /* Deep cyan for card text */
+  --popover: #ffffff; /* White popover background */
+  --popover-foreground: #164e63; /* Deep cyan popover text */
+  --primary: #164e63; /* Deep cyan for primary elements */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #6366f1; /* Lavender blue for secondary elements */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #f8fafc; /* Very light gray for muted backgrounds */
+  --muted-foreground: #475569; /* Slate gray for muted text */
+  --accent: #6366f1; /* Lavender blue accent for highlights */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #dc2626; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e5e7eb; /* Light gray border color */
+  --input: #ffffff; /* White input background */
+  --ring: rgba(22, 78, 99, 0.2); /* Cyan ring for focus */
+  --chart-1: #164e63; /* Deep cyan for charts */
+  --chart-2: #6366f1; /* Lavender blue for charts */
+  --chart-3: #ecfeff; /* Light cyan for charts */
+  --chart-4: #475569; /* Slate gray for charts */
+  --chart-5: #f8fafc; /* Light gray for charts */
+  --radius: 0.5rem; /* Rounded corners for modern look */
+  --sidebar: #ecfeff; /* Light cyan sidebar background */
+  --sidebar-foreground: #164e63; /* Deep cyan sidebar text */
+  --sidebar-primary: #ffffff; /* White sidebar primary */
+  --sidebar-primary-foreground: #164e63; /* Deep cyan sidebar primary text */
+  --sidebar-accent: #6366f1; /* Lavender sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #e5e7eb; /* Light sidebar border */
+  --sidebar-ring: rgba(99, 102, 241, 0.2); /* Lavender sidebar ring */
+  --font-noto-devanagari: "Noto Sans Devanagari", sans-serif; /* Devanagari font for Hindi script */
+}
+
+.dark {
+  /* Updated dark mode to maintain professional cyan-lavender theme */
+  --background: #0f172a; /* Very dark slate background */
+  --foreground: #f1f5f9; /* Light slate text */
+  --card: #1e293b; /* Dark slate card background */
+  --card-foreground: #67e8f9; /* Light cyan card text */
+  --popover: #0f172a; /* Dark slate popover */
+  --popover-foreground: #f1f5f9; /* Light slate popover text */
+  --primary: #0891b2; /* Bright cyan primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #8b5cf6; /* Bright lavender secondary */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #1e293b; /* Dark slate muted background */
+  --muted-foreground: #94a3b8; /* Medium slate muted text */
+  --accent: #8b5cf6; /* Bright lavender accent */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #ef4444; /* Bright red destructive */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #334155; /* Medium slate border */
+  --input: #1e293b; /* Dark slate input background */
+  --ring: rgba(8, 145, 178, 0.3); /* Cyan ring for focus */
+  --chart-1: #0891b2; /* Bright cyan for charts */
+  --chart-2: #8b5cf6; /* Bright lavender for charts */
+  --chart-3: #1e293b; /* Dark slate for charts */
+  --chart-4: #94a3b8; /* Medium slate for charts */
+  --chart-5: #475569; /* Dark slate for charts */
+  --sidebar: #1e293b; /* Dark slate sidebar */
+  --sidebar-foreground: #f1f5f9; /* Light slate sidebar text */
+  --sidebar-primary: #0891b2; /* Bright cyan sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #8b5cf6; /* Bright lavender sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #334155; /* Medium slate sidebar border */
+  --sidebar-ring: rgba(139, 92, 246, 0.3); /* Lavender sidebar ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Added Devanagari font variable for Hindi script support */
+  --font-devanagari: var(--font-noto-devanagari);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added multilingual text support with proper font fallbacks */
+  .multilingual-text {
+    font-family: var(--font-geist-sans), var(--font-noto-devanagari), system-ui, -apple-system, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Enhanced input and textarea styling for multilingual content */
+  input[lang="mul"],
+  textarea[lang="mul"] {
+    font-family: var(--font-geist-sans), var(--font-noto-devanagari), system-ui, -apple-system, sans-serif;
+    unicode-bidi: plaintext;
+  }
+}
